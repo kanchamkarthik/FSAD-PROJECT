@@ -1,0 +1,81 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.smartcity:backend >------------------------
+[INFO] Building SmartCityBackend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.0.5:run (default-cli) > test-compile @ backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ backend ---
+[INFO] skip non existing resourceDirectory C:\Users\HP\OneDrive\Desktop\fsadproject\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:4.0.5:run (default-cli) < test-compile @ backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.0.5:run (default-cli) @ backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-04-04T13:53:26.589+05:30  INFO 13776 --- [SmartCityBackend] [           main] c.s.backend.SmartCityBackendApplication  : Starting SmartCityBackendApplication using Java 21.0.7 with PID 13776 (C:\Users\HP\OneDrive\Desktop\fsadproject\backend\target\classes started by HP in C:\Users\HP\OneDrive\Desktop\fsadproject\backend)
+2026-04-04T13:53:26.589+05:30  INFO 13776 --- [SmartCityBackend] [           main] c.s.backend.SmartCityBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-04-04T13:53:27.412+05:30  INFO 13776 --- [SmartCityBackend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-04T13:53:27.500+05:30  INFO 13776 --- [SmartCityBackend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
+2026-04-04T13:53:28.130+05:30  INFO 13776 --- [SmartCityBackend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-04T13:53:28.155+05:30  INFO 13776 --- [SmartCityBackend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-04T13:53:28.155+05:30  INFO 13776 --- [SmartCityBackend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-04T13:53:28.224+05:30  INFO 13776 --- [SmartCityBackend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1559 ms
+2026-04-04T13:53:28.520+05:30  INFO 13776 --- [SmartCityBackend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-04T13:53:28.617+05:30  INFO 13776 --- [SmartCityBackend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-04T13:53:29.225+05:30  INFO 13776 --- [SmartCityBackend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-04T13:53:29.265+05:30  INFO 13776 --- [SmartCityBackend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-04T13:53:29.464+05:30  INFO 13776 --- [SmartCityBackend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:smartcity_db user=SA
+2026-04-04T13:53:29.472+05:30  INFO 13776 --- [SmartCityBackend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-04T13:53:29.546+05:30  INFO 13776 --- [SmartCityBackend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:smartcity_db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: SMARTCITY_DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-04T13:53:30.737+05:30  INFO 13776 --- [SmartCityBackend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table comments (id bigint generated by default as identity, created_at timestamp(6), text TEXT, issue_id bigint, user_id bigint, primary key (id))
+Hibernate: create table issues (id bigint generated by default as identity, category varchar(255), created_at timestamp(6), description TEXT, image_url varchar(255), lat float(53), lng float(53), location_address varchar(255), status enum ('IN_PROGRESS','OPEN','RESOLVED'), title varchar(255), updated_at timestamp(6), user_id bigint, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, email varchar(255), name varchar(255), password varchar(255), role varchar(255), primary key (id))
+Hibernate: alter table if exists users drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+Hibernate: alter table if exists users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table if exists comments add constraint FK287j1dpionjmfs2yycfjmy5j2 foreign key (issue_id) references issues
+Hibernate: alter table if exists comments add constraint FK8omq0tc18jd43bu5tjh6jvraq foreign key (user_id) references users
+Hibernate: alter table if exists issues add constraint FKcigc16s3flsg53i2sy0m37e foreign key (user_id) references users
+2026-04-04T13:53:30.845+05:30  INFO 13776 --- [SmartCityBackend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-04T13:53:30.974+05:30  INFO 13776 --- [SmartCityBackend] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-04T13:53:31.381+05:30  WARN 13776 --- [SmartCityBackend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-04T13:53:31.854+05:30  INFO 13776 --- [SmartCityBackend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-04T13:53:31.862+05:30  INFO 13776 --- [SmartCityBackend] [           main] c.s.backend.SmartCityBackendApplication  : Started SmartCityBackendApplication in 5.911 seconds (process running for 6.411)
+Hibernate: select count(*) from users u1_0
+Hibernate: insert into users (email,name,password,role,id) values (?,?,?,?,default)
+Hibernate: insert into users (email,name,password,role,id) values (?,?,?,?,default)
+^C
